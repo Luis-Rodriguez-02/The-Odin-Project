@@ -1,0 +1,182 @@
+/* Selectors -> refer to the HTML elements to which CSS rules apply, they're whats being selected for each rule */
+
+/* Universal Selector -> selects elements of any type, all elements would have the style applied */
+
+* {
+  color: purple;
+}
+
+/* Type selectors -> Will select all elements of the given element type*/
+
+/* <!-- index.html -->
+
+<div>Hello, World!</div>
+<div>Hello again!</div>
+<p>Hi...</p>
+<div>Okay, bye.</div>
+
+  */
+
+div {
+  color: white;
+}
+
+/* Here all div elements would be selected, while the p element wouldnt be */
+
+/* Class selectors  -> Will select all elements with the given class, which is an attribute you place on an HTML element*/
+
+/* 
+<!-- index.html -->
+
+<div class="alert-text">Please agree to our terms of service.</div>
+
+*/
+
+.alert-text {
+  color: red;
+}
+
+/* The syntax for class selectors:
+- a period after case sensitive value of the class attribute
+
+- you can add a class to multiple elements
+- you can add multiple classes to one element, separated by whitespace (class="alert-text severe-alert")
+*/
+
+/* ID selectors -> Select an element with given ID, which is another attribute you place on an HTML element */
+/* Elements can only have one ID but they can have multiple classes */
+
+/* 
+
+<!-- index.html -->
+
+<div id="title">My Awesome 90's Page</div>
+
+*/
+
+#title {
+  background-color: red;
+}
+
+/* Instead of a period, like for a class, we use a hastag followed by case sensitive value of the ID attribute */
+/* Use classes more and ID's sparingly
+
+-> possible use cases
+- links redirect to a section of the current page
+- taking advantage of specificity 
+*/
+
+/* Grouping selector -> what if we have two groups of elements that share some of their style declarations?
+
+*/
+
+.read {
+  color: white;
+  background-color: black;
+  /* several unique declarations */
+}
+
+.unread {
+  color: white;
+  background-color: black;
+  /* several unique declarations */
+}
+
+/* both .read and .unread selectors share the color and background-color declarations,
+we can reduce repetition by grouping the selectors together in a comma-separated list
+*/
+
+.read,
+.unread {
+  color: white;
+  background-color: black;
+}
+
+.read {
+   /* several unique declarations */
+}
+
+.unread {
+  /* several unique declarations */
+}
+
+/* another way of chaining selectors is as a list without separation 
+
+following html -> 
+<div>
+  <div class="subsection header">Latest Posts</div>
+  <p class="subsection preview">This is where a preview for a post might go.</p>
+</div>
+
+we have two elements with .subsection class that have some unique styles, but what if we only want to apply a separate rule to the element that also has header as a second class, we can chain both the class selectors like so
+
+*/
+
+.subsection.header {
+  color: red;
+}
+
+/* can also be used to chain a class that has an id */
+
+.subsection.header {
+  color: red;
+}
+.subsection#preview {
+  color: blue;
+}
+
+/* Descendant combinator -> combinators allow us to combine multiple selectors differently than grouping or chaining, they show a relationship between the selectors, there are four different types */
+
+/* Descendant combinator will only cause elements that match the last selector to be selected if they have an ancestor (parent, grantparent) that matches the previous selector */
+
+/* 
+So something like .ancestor .child would select an element with the class child if it has an ancestor with the class ancestor. Another way to think of it is that child will only be selected if it is nested inside ancestor, regardless of how deep that nesting is. Take a quick look at the example below and see if you can tell which elements would be selected based on the CSS rule provided:
+
+
+
+<!-- index.html -->
+
+<div class="ancestor">
+  <!-- A -->
+  <div class="contents">
+    <!-- B -->
+    <div class="contents"><!-- C --></div>
+  </div>
+</div>
+
+<div class="contents"><!-- D --></div>
+
+
+*/
+
+
+.ancestor .contents {
+  /* some declarations */
+}
+
+/* In the above example, the first two elements with the contents class (B and C) would be selected, but that last element (D) wouldn’t be. Was your guess correct? */
+
+/* Properties to get started with
+
+- color
+- background color 
+
+both of these properties can accept one of several kinds of values. A common one is a keyword, such as an actual color name like red or the transparent keyword. They also accept HEX, RGB, and HSL values
+
+*/
+
+p {
+  color: #1100ff; 
+  /* hex */
+}
+
+p {
+  color: rgb(100, 0, 127);
+  /* rgb example */
+}
+
+p {
+  color: hsl(15, 82%, 56%);
+}
+
+/* Typography basics and text-align */
