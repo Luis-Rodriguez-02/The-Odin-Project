@@ -180,3 +180,77 @@ p {
 }
 
 /* Typography basics and text-align */
+/* 
+- font-family can be a single value or comma separated list of values that determine what font an element uses
+- font family name like "times new roman"
+- generic family name serif, we use quotes due to whitespace 
+
+- If a browser cannot find or does not support the first font in a list, it will use the next one, then the next one and so on until it finds a supported and valid font. This is why it’s best practice to include a list of values for this property, starting with the font you want to be used most and ending with a generic font family as a fallback
+
+font-size will, as the property name suggests, set the size of the font. When giving a value to this property, the value should not contain any whitespace, e.g. font-size: 22px has no space between “22” and “px”.
+
+font-weight affects the boldness of text, assuming the font supports the specified weight. This value can be a keyword, e.g. font-weight: bold, or a number between 1 and 1000, e.g. font-weight: 700 (the equivalent of bold). Usually, the numeric values will be in increments of 100 up to 900, though this will depend on the font.
+
+text-align will align text horizontally within an element, and you can use the common keywords you may have come across in word processors as the value for this property, e.g. text-align: center.
+*/
+
+
+/* Image height and image width */
+/* 
+
+By default, an <img> element’s height and width values will be the same as the actual image file’s height and width. If you wanted to adjust the size of the image without causing it to lose its proportions, you would use a value of “auto” for the height property and adjust the width value:
+
+*/
+
+img {
+  height: auto;
+  width: 500px;
+}
+
+/* 
+These properties work in conjunction with the height and width attributes in the HTML. It’s best to include both of these properties and the HTML attributes for image elements, even if you don’t plan on adjusting the values from the image file’s original ones. When these values aren’t included, if an image takes longer to load than the rest of the page contents, it won’t take up any space on the page at first but will suddenly cause a drastic shift of the other page contents once it does load in. Explicitly stating a height and width prevents this from happening, as space will be “reserved” on the page and appear blank until the image loads.
+*/
+
+/* Adding CSS to HTML */
+
+/* External CSS
+
+- creating a separate file for the css and linking it inside of an HTML's opening and closing head tags with a self closing link element
+
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+
+- the rel attribute is required and specifies the relationship between the html file and the linked file
+
+A couple of the pros to this method are:
+
+It keeps our HTML and CSS separated, which results in the HTML file being smaller and making things look cleaner.
+We only need to edit the CSS in one place, which is especially handy for websites with many pages that all share similar styles.
+*/
+
+/* Internal CSS
+Internal CSS (or embedded CSS) involves adding the CSS within the HTML file itself instead of creating a completely separate file. With the internal method, you place all the rules inside of a pair of opening and closing <style> tags, which are then placed inside of the opening and closing <head> tags of your HTML file. Since the styles are being placed directly inside of the <head> tags, we no longer need a <link> element that the external method requires.
+
+This method can be useful for adding unique styles to a single page of a website, but it doesn’t keep things separate like the external method, and depending on how many rules and declarations there are it can cause the HTML file to get pretty big.
+*/
+
+/* Inline CSS
+
+  Inline CSS makes it possible to add styles directly to HTML elements, though this method isn’t as recommended:
+
+  <div style="color: white; background-color: black;">...</div>
+
+  The first thing to note is that we don’t actually use any selectors here, since the styles are being added directly to the opening <div> tag itself. Next, we have the style= attribute, with its value within the pair of quotation marks being the declarations.
+
+If you need to add a unique style for a single element, this method can work just fine. Generally, though, this isn’t exactly a recommended way for adding CSS to HTML for a few reasons:
+
+It can quickly become pretty messy once you start adding a lot of declarations to a single element, causing your HTML file to become unnecessarily bloated.
+
+If you want many elements to have the same style, you would have to copy and paste the same style to each individual element, causing lots of unnecessary repetition and more bloat.
+
+Any inline CSS will override the other two methods, which can cause unexpected results. (While we won’t dive into it here, this can actually be taken advantage of.)
+
+*/
