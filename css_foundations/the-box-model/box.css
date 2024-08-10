@@ -1,0 +1,20 @@
+/* 
+
+Everything on a webpage is a rectagular box, they can have other boes in them and can be next to each other. We can see this by applying an outline to every element in on the page
+
+*/
+
+* {
+  outline: 2px solid red;
+}
+
+/* 
+
+Padding -> Increases the space between the border of a box and the content of the box
+
+Border -> Adds space (even if its only a pixel or two) between the margin and the padding
+
+Margin -> Increases the space between the borders of a box and the borders of adjacent boxes.
+
+
+*/
