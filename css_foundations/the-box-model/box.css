@@ -5,9 +5,22 @@ Everything on a webpage is a rectagular box, they can have other boes in them an
 */
 
 * {
-  outline: 2px solid red;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 40px;
 }
 
+#box1 {
+  background-color: blue;
+  border: 10px solid orange;
+  padding: 5px; 
+}
+
+#box2 {
+  background-color: red;
+  border: 0 solid blue;
+}
 /* 
 
 Padding -> Increases the space between the border of a box and the content of the box
@@ -16,5 +29,5 @@ Border -> Adds space (even if its only a pixel or two) between the margin and th
 
 Margin -> Increases the space between the borders of a box and the borders of adjacent boxes.
 
-
+box-sizing ->  if set to border box the width and height of the box are actually the box size, will affect content sizing to retain width and height, vs content box which will change the box size.
 */
