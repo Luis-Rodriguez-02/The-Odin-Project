@@ -1,0 +1,74 @@
+/* DISPLAY: BLOCK AND INLINE */
+
+/* 
+
+These properties control how HTML elements appear on the webpage, they also determine element behavior and interaction.
+
+*/
+
+/* 
+
+  LESSON FOCUS
+  - Learn about "normal flow"
+  - Learn the difference between block and inline elements
+  - Learn which elements default to block and which to inline
+  - Learn what divs and spans are
+
+*/
+
+
+/* 
+    BLOCK VS INLINE ELEMENTS
+- Elements appear stacked atop each other, each element starting on a new line
+- vs inline elements that do not start on a new line, and appear in line with whatever elements they are placed beside. A clear example is a link or a <a> tag. If you place once of these in the middle of a paragraph of text, the link will bechave like a part of the paragraph. 
+- Padding and margin behave differently on inline elements. In general you do not want to try and put extra padding or argin on inline elements
+
+    THE MIDDLE GROUND INLINE BLOCK  
+- Inline block elements behave like inline elements but with block style padding and margin. Display: inline-block is useful but in practice flexbow will be used more often if trying to line up a bunch of boxes.
+
+    DIVS AND SPANS
+- Unlike other elements we've discussed which give meaning to the context they contain. DIVS and SPANS are just generic boxes that can contain anything.
+- DIVS and SPANS can be used as hook elements, for example, we may need to group related elements under one parent to position them on a page.
+- DIV is a block-level element by default, it is commonly used as a container to group other elements. DIVS allow us to divide the page into different blocks and style those blocks.
+
+- SPAN is an inline-level element by default. It can be used to group text content and inline HTML elements for styling
+- Should only be used when no other semantic HTML element is appropriate.
+
+*/
+
+*,
+*::before,
+*::after {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+div {
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #EEEEEE;
+}
+
+.introduction {
+  background-color: #548CA8;
+}
+
+.main-content {
+  background-color: #476072;
+}
+
+.contact-us {
+  background-color: #334257;
+}
+
+.span-test {
+  background-color: yellow;
+  color: black
+}
+
+.test-span {
+  color: red;
+  border: solid purple 1px;
+}
