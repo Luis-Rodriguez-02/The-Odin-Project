@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+  line-height: 1.5;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+/* 
+                    LESSON OVERVIEW 
+- Learn how to position elements using flexbox
+- Learn about flex containers and flex items
+- Learn how to create useful components and layouts that go beyond just stacking and centering items.
+
+*/
+
+/* FLEXBOX */
+/* 
+
+- Flexbox is a way to arrange items into rows of colums. 
+- These items will flex (grow or shrink) based on defined rules.
+
+*/
+
+.flex-container {
+  display: flex;
+}
+.flex-container div {
+  background-color: peachpuff;
+  border: 4px solid brown;
+  height: 100px;
+  flex: 1;
+}
+
+/* 
+the divs will ‘flex’. They will fill the available area and will each have equal width.
+*/
+
+/* 
+
+- As you’ve seen, flexbox is not just a single CSS property but a whole toolbox of properties that you can use to put things where you need them. 
+
+- Some of these properties belong on the flex container, while some go on the flex items. This is an important concept.
+
+*/
+
+/* FLEX CONTAINERS AND FLEX ITEMS */
+
+/* 
+- A flex container is any element that has display: flex on it. 
+
+- A flex item is any element that lives directly inside of a flex container 
+
+- Any element can be both a flex container and a flex item. You can put display: flex on a flex item and then use flexbox to arrange its children
+*/
+
+
+
+.test-flex-container {
+  display: flex;
+}
