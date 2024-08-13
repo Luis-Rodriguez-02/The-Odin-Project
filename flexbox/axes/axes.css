@@ -1,0 +1,47 @@
+/* FLEX CONTAINER ORIENTATION LESSON */
+/* 
+- Learn about 2 axes of a flex container (main axis and cross axis
+- Learn how to change those axes to arrange the content in colums instead of rows
+*/
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+.flex-container {
+  flex-direction: column; 
+  /* default is row, this changes the main axis to vertial vs horizontal, so it changes justify content and align content. */
+}
+.parent-axes-test {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.parent-axes-test > div {
+  background-color: lightcyan;
+  font-size: 2rem;
+  border: solid red 5px;
+}
+
+.parent-axes-test {
+  display: flex;
+  max-width: 1000px;
+  max-height: 1000px;
+}
+
+inside of .flex-container */
+.flex-container div {
+  background: peachpuff;
+  border: 4px solid brown;
+  height: 80px;
+  flex: 1 1 auto;
+} 
+
+/* WHy does the auto in the above code make the boxes actually spread out, if we set flex-basis to 0 instead of auto it breaks the boxes */
+
+/* The reason for this is that the flex shorthand expands flex-basis to 0, which means that all flex-growing and flex-shrinking would begin their calculations from 0. Empty divs by default have 0 height, so for our flex items to fill up the height of their container, they don’t actually need to have any height at all.
+
+The example above fixed this by specifying flex: 1 1 auto, telling the flex items to default to their given height. We could also have fixed it by putting a height on the parent .flex-container, or by using flex-grow: 1 instead of the shorthand. */
+
+
