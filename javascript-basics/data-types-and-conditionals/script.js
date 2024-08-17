@@ -16,3 +16,31 @@ This section contains a general overview of topics that you will learn in this l
 
 
 */
+
+if (browser === 'Edge') {
+  alert('You\'ve got the edge!');
+}
+else if (browser === 'Chome' || browser === 'Firefox' ||  browser === 'Safari' || browser === 'Opera'){
+  alert('Okay we support those browsers too')
+}
+else {
+  alert('We hope that this page looks ok!')
+}
+
+let a = +prompt('a', "")
+
+switch (a) {
+  case 0:
+    alert( 0 );
+    break;
+  case 1:
+    alert( 1 );
+    break;
+  case 2:
+  case 3:
+    alert( '2,3' );
+    break;
+  default:
+    alert('No matching case');
+    break;
+}
