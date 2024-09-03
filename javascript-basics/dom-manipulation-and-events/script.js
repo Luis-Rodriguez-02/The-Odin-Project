@@ -24,11 +24,36 @@ p1.textContent = "ME TOO";
 div.appendChild(h1);
 div.appendChild(p1);
 
+const buttonDiv = document.createElement('div');
+buttonDiv.classList.add("buttonDiv");
+buttonDiv.style.margin = '50 px';
+buttonDiv.style.border = 'solid red 10px';
 
 
 
 
+const btn = document.querySelector('#btn');
+btn.addEventListener("click", function (e) {
+  console.log(e.target);
+});
+btn.addEventListener("click", function (e) {
+  e.target.style.background = "blue";
+});
+const bestBtn = document.querySelector('#bestBtn');
+bestBtn.addEventListener("click", funnyFunc);
 
+function funnyFunc() {
+  alert("you like poop");
+}
+
+// button is a node list. it looks and acts much like an arry
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    alert(button.id);
+  });
+});
 
 
 
@@ -36,5 +61,6 @@ container.appendChild(content);
 container.appendChild(para);
 container.appendChild(h3);
 container.appendChild(div);
+content.appendChild(buttonDiv);
 
 
